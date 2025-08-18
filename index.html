@@ -9,144 +9,129 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg1: #0f172a; /* deep navy */
-      --accent-a: #06b6d4; /* teal */
-      --accent-b: #7c3aed; /* violet (not magenta) */
+      --bg1: #0f172a;
+      --accent-a: #06b6d4;
+      --accent-b: #7c3aed;
       --card: rgba(255,255,255,0.06);
-      --glass: rgba(255,255,255,0.06);
-      --glass-2: rgba(255,255,255,0.04);
-      --radius: 18px;
       --max-width: 1100px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
       margin:0;
-      font-family:"Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
       background:linear-gradient(160deg,var(--bg1),#071029 40%);
-      color: #e6eef8;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
+      color:#e6eef8;
       display:flex;align-items:center;justify-content:center;padding:6vh 4vw;
     }
-    .container{
-      width:100%;max-width:var(--max-width);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:24px;padding:4rem;box-shadow:0 20px 50px rgba(2,6,23,0.6);backdrop-filter: blur(6px);
-    }
-    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem}
-    .brand{display:flex;gap:1rem;align-items:center}
-    .logo{
-      width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent-a),var(--accent-b));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;color:white;box-shadow:0 6px 18px rgba(124,58,237,0.18)
-    }
-    .brand h1{font-size:1.1rem;margin:0}
-    nav a{color:inherit;text-decoration:none;margin-left:1rem;padding:8px 12px;border-radius:10px;font-weight:600}
-    nav a.primary{background:linear-gradient(90deg,var(--accent-a),var(--accent-b));color:white}
-
-    .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:2rem 1rem;margin-bottom:2.2rem}
-    .hero .title{font-size:clamp(28px,6vw,48px);line-height:1.02;font-weight:800;margin:0}
-    .hero .subtitle{margin-top:0.6rem;color:rgba(230,238,248,0.78);max-width:80%;font-weight:400}
-
-    .content-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2rem}
-    .card{background:var(--card);padding:1.2rem;border-radius:14px;min-height:120px;display:flex;flex-direction:column;justify-content:space-between}
-    .card h3{margin:0 0 0.4rem 0;font-size:1.05rem}
-    .card p{margin:0;color:rgba(230,238,248,0.78);font-size:0.95rem}
-
-    .download-panel{display:flex;gap:1.2rem;align-items:center;justify-content:center;margin-top:2rem}
-    .dl-btn{
-      display:inline-flex;align-items:center;gap:0.8rem;padding:14px 22px;border-radius:14px;font-weight:800;font-size:1rem;border:none;cursor:pointer;text-decoration:none;
-      background:linear-gradient(90deg,var(--accent-a),var(--accent-b));color:white;box-shadow:0 10px 30px rgba(12,34,65,0.45);transition:transform .16s ease, box-shadow .16s ease
-    }
-    .dl-btn:active{transform:translateY(1px)}
-    .dl-hint{font-size:0.9rem;color:rgba(230,238,248,0.8)}
-
-    .meta{margin-top:1rem;text-align:center;color:rgba(230,238,248,0.55)}
-
-    footer{margin-top:2.6rem;text-align:center;color:rgba(230,238,248,0.45);font-size:0.9rem}
-
-    /* responsive */
-    @media (max-width:900px){
-      .content-grid{grid-template-columns:repeat(2,1fr)}
-    }
-    @media (max-width:600px){
-      .container{padding:2rem}
-      .content-grid{grid-template-columns:1fr}
-      nav{display:none}
-    }
-
-    /* small flourish */
-    .wave{position:absolute;right:-8vw;top:-6vh;width:40vw;height:40vw;background:radial-gradient(circle at 30% 30%, rgba(124,58,237,0.12), transparent 30%);
-      filter:blur(30px);pointer-events:none}
+    .container{max-width:var(--max-width);background:rgba(255,255,255,0.02);border-radius:24px;padding:4rem;box-shadow:0 20px 50px rgba(2,6,23,0.6);backdrop-filter:blur(6px)}
+    .hero{text-align:center;margin-bottom:2.2rem}
+    .hero .title{font-size:clamp(28px,6vw,48px);font-weight:800;margin:0}
+    .subtitle{margin-top:.6rem;color:rgba(230,238,248,.78)}
+    .download-panel{margin-top:2rem}
+    .dl-btn{display:inline-flex;align-items:center;gap:.8rem;padding:14px 22px;border-radius:14px;font-weight:800;font-size:1rem;cursor:pointer;text-decoration:none;
+      background:linear-gradient(90deg,var(--accent-a),var(--accent-b));color:white;box-shadow:0 10px 30px rgba(12,34,65,.45)}
+    footer{margin-top:2.6rem;text-align:center;color:rgba(230,238,248,.45);font-size:.9rem}
   </style>
 </head>
 <body>
-  <div class="wave" aria-hidden="true"></div>
   <main class="container" role="main">
-    <header>
-      <div class="brand">
-        <div class="logo">物</div>
-        <div>
-          <h2 style="margin:0;font-weight:700">物理学霸笔记</h2>
-          <div style="font-size:0.85rem;color:rgba(230,238,248,0.7)">精要、系统、可下载</div>
-        </div>
-      </div>
-      <nav aria-label="主导航">
-        <a href="#features">目录</a>
-        <a href="#download" class="primary">下载</a>
-      </nav>
-    </header>
-
     <section class="hero" aria-labelledby="main-title">
       <h1 id="main-title" class="title">物理学霸笔记</h1>
       <p class="subtitle">覆盖力学、电磁、热学与光学的精炼笔记与速查表，适合补习、复习与速记使用。</p>
-      <div class="download-panel" id="download">
-        <!-- The download link points to a relative path. Replace the href with your hosted file URL when ready. -->
-        <a class="dl-btn" id="dlLink" href="学霸笔记.exe" download="学霸笔记.exe" title="点击下载 学霸笔记.exe">⬇ 下载 学霸笔记.exe</a>
-      </div>
-      <div class="meta">如果浏览器阻止下载，请确认文件已上传到服务器并使用 HTTPS；移动设备可能无法直接运行 .exe 文件。</div>
-    </section>
-
-    <section id="features">
-      <div class="content-grid">
-        <article class="card">
-          <div>
-            <h3>精选笔记</h3>
-            <p>每章要点与常考题型，快速掌握解题思路与常见陷阱。</p>
-          </div>
-        </article>
-        <article class="card">
-          <div>
-            <h3>公式速查表</h3>
-            <p>重要公式、单位换算与常见近似，一页速查，考试节省宝贵时间。</p>
-          </div>
-        </article>
-        <article class="card">
-          <div>
-            <h3>典型例题</h3>
-            <p>精选历年真题与高频题，配有清晰步骤与解题技巧提示。</p>
-          </div>
-        </article>
+      <div class="download-panel">
+        <a class="dl-btn" id="dlLink" href="学霸笔记.exe">⬇ 下载 学霸笔记.exe</a>
       </div>
     </section>
-
     <footer>
-      © <span id="year"></span> 物理学霸笔记 · 制作人版权所有
+      © <span id="year"></span> 物理学霸笔记 · 版权所有
     </footer>
   </main>
 
   <script>
-    // set year
+    // 设置年份
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Informative click handler: if user clicks download, show a small confirmation for desktop-only file types
-    document.getElementById('dlLink').addEventListener('click', function(e){
-      // allow default download; show a gentle reminder (non-blocking)
-      const hint = '提示：该文件为 Windows 可执行 (.exe)。在非 Windows 环境或未信任来源请勿执行。';
-      // show native alert for quick guidance
-      setTimeout(()=>alert(hint), 250);
+    // 强制下载
+    function forceDownload(filename) {
+      const link = document.createElement("a");
+      link.href = filename;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+    document.getElementById("dlLink").addEventListener("click", function(e){
+      e.preventDefault();
+      forceDownload("学霸笔记.exe");
     });
+  </script>
+</body>
+</html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>物理学霸笔记</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #0f172a;
+      --accent-a: #06b6d4;
+      --accent-b: #7c3aed;
+      --card: rgba(255,255,255,0.06);
+      --max-width: 1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+      background:linear-gradient(160deg,var(--bg1),#071029 40%);
+      color:#e6eef8;
+      display:flex;align-items:center;justify-content:center;padding:6vh 4vw;
+    }
+    .container{max-width:var(--max-width);background:rgba(255,255,255,0.02);border-radius:24px;padding:4rem;box-shadow:0 20px 50px rgba(2,6,23,0.6);backdrop-filter:blur(6px)}
+    .hero{text-align:center;margin-bottom:2.2rem}
+    .hero .title{font-size:clamp(28px,6vw,48px);font-weight:800;margin:0}
+    .subtitle{margin-top:.6rem;color:rgba(230,238,248,.78)}
+    .download-panel{margin-top:2rem}
+    .dl-btn{display:inline-flex;align-items:center;gap:.8rem;padding:14px 22px;border-radius:14px;font-weight:800;font-size:1rem;cursor:pointer;text-decoration:none;
+      background:linear-gradient(90deg,var(--accent-a),var(--accent-b));color:white;box-shadow:0 10px 30px rgba(12,34,65,.45)}
+    footer{margin-top:2.6rem;text-align:center;color:rgba(230,238,248,.45);font-size:.9rem}
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <section class="hero" aria-labelledby="main-title">
+      <h1 id="main-title" class="title">物理学霸笔记</h1>
+      <p class="subtitle">覆盖力学、电磁、热学与光学的精炼笔记与速查表，适合补习、复习与速记使用。</p>
+      <div class="download-panel">
+        <a class="dl-btn" id="dlLink" href="学霸笔记.exe">⬇ 下载 学霸笔记.exe</a>
+      </div>
+    </section>
+    <footer>
+      © <span id="year"></span> 物理学霸笔记 · 版权所有
+    </footer>
+  </main>
 
-    // Accessibility: allow Enter key to activate link when focused
-    document.getElementById('dlLink').addEventListener('keydown', function(e){
-      if(e.key === 'Enter') this.click();
+  <script>
+    // 设置年份
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // 强制下载
+    function forceDownload(filename) {
+      const link = document.createElement("a");
+      link.href = filename;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+    document.getElementById("dlLink").addEventListener("click", function(e){
+      e.preventDefault();
+      forceDownload("学霸笔记.exe");
     });
   </script>
 </body>
